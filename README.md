@@ -1,15 +1,19 @@
 ### Estruturas de Dados
 
 #### Lista Encadeada (Linked List)
+
 **Contexto de uso:** Armazenar uma coleção de elementos em uma sequência linear, onde cada elemento (nó) aponta para o próximo. É útil quando você precisa de inserções e exclusões eficientes no meio da lista, sem a necessidade de realocação de memória como em arrays dinâmicos.
+
 **Aplicações:**
 • Implementação de outras estruturas de dados como pilhas e filas.
 • Gerenciamento de memória (por exemplo, na alocação e desalocação de blocos de memória).
 • Listas de reprodução de músicas onde a ordem e a facilidade de adicionar/remover são importantes.
 • Sistemas de arquivos onde os blocos de dados não são contíguos.
+
 **Constrains/Downsides:**
 • Acesso lento por índice: Para acessar um elemento em uma posição específica, é preciso percorrer a lista desde o início, o que leva tempo O(n).
 • Maior consumo de memória: Cada nó precisa armazenar não apenas o dado, mas também um ponteiro para o próximo nó.
+
 **Principais elementos da linguagem utilizados para construção:**
 • Objetos/Classes: Para representar os nós da lista (com value e next).
 • Referências: Para apontar de um nó para o próximo.
