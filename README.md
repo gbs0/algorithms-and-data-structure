@@ -1,6 +1,6 @@
-### Estruturas de Dados
+## Estruturas de Dados
 
-#### Lista Encadeada (Linked List)
+### Lista Encadeada (Linked List)
 
 **Contexto de uso:** Armazenar uma coleção de elementos em uma sequência linear, onde cada elemento (nó) aponta para o próximo. É útil quando você precisa de inserções e exclusões eficientes no meio da lista, sem a necessidade de realocação de memória como em arrays dinâmicos.
 
@@ -24,7 +24,7 @@
 <li><strong>Referências:</strong> Para apontar de um nó para o próximo.</li>
 </ul>
 
-#### Lista Duplamente Ligada (Doubly Linked List)
+### Lista Duplamente Ligada (Doubly Linked List)
 **Contexto de uso:** Similar à lista encadeada, mas cada nó também aponta para o nó anterior. Isso permite travessia bidirecional e inserções/exclusões mais eficientes em ambas as direções.
 
 **Aplicações:**
@@ -46,7 +46,7 @@
 <li>Referências: Para apontar para os nós anterior e posterior.</li>
 </ul>
 
-#### Fila (Queue)
+### Fila (Queue)
 **Contexto de uso:** Segue o princípio FIFO (First-In, First-Out), onde o primeiro elemento adicionado é o primeiro a ser removido. É usada para gerenciar recursos que precisam ser processados em uma ordem específica.
 
 **Aplicações:**
@@ -69,7 +69,7 @@
 <li><strong>Listas Encadeadas:</strong> Para uma implementação mais eficiente em termos de tempo para grandes filas.</li>
 </ul>
 
-#### Pilha (Stack)
+### Pilha (Stack)
 **Contexto de uso:** Segue o princípio LIFO (Last-In, First-Out), onde o último elemento adicionado é o primeiro a ser removido. É usada para gerenciar operações que precisam ser desfeitas na ordem inversa em que foram realizadas.
 
 **Aplicações:**
@@ -93,7 +93,7 @@
 <li>Listas Encadeadas: Para uma implementação mais flexível em termos de tamanho.</li>
 </ul>
 
-#### Tabela de Hash (Hash Table)
+### Tabela de Hash (Hash Table)
 Contexto de uso: Armazenar pares chave-valor e permitir acesso rápido aos valores através de suas chaves. Usa uma função de hash para mapear chaves para índices em um array.
 Aplicações:
 Dicionários e objetos em linguagens de programação.
@@ -108,7 +108,8 @@ Principais elementos da linguagem utilizados para construção:
 Objetos JavaScript ({}) ou Map: Para a implementação nativa de dicionários.
 Funções: Para a função de hash.
 Arrays: Para armazenar os "buckets" onde os pares chave-valor são armazenados.
-Heap (Heap Máximo e Mínimo)
+
+### Heap (Heap Máximo e Mínimo)
 Contexto de uso: Uma estrutura de dados baseada em árvore binária que satisfaz a propriedade de heap: em um heap máximo, o valor de cada nó é maior ou igual aos valores de seus filhos; em um heap mínimo, é menor ou igual. É ideal para encontrar o maior/menor elemento rapidamente.
 Aplicações:
 Implementação de filas de prioridade.
@@ -121,7 +122,8 @@ Remoções e inserções: As operações de inserção e remoção exigem a rest
 Principais elementos da linguagem utilizados para construção:
 Arrays: A maneira mais comum e eficiente de representar um heap, onde os filhos de um nó em index i estão em 2i+1 e 2i+2.
 Comparadores: Para definir a ordem dos elementos (maior ou menor).
-Fila de Prioridade (Priority Queue)
+
+### Fila de Prioridade (Priority Queue)
 Contexto de uso: Uma fila onde cada elemento tem uma prioridade associada. Elementos com maior prioridade são removidos antes de elementos com menor prioridade. Se as prioridades forem iguais, a ordem de chegada pode ser usada como critério.
 Aplicações:
 Gerenciamento de tarefas em sistemas operacionais baseados em prioridade.
@@ -134,8 +136,9 @@ Desempenho: Inserções e remoções podem levar tempo logarítmico (O(logn)) de
 Principais elementos da linguagem utilizados para construção:
 Heap (Heap Máximo/Mínimo): A forma mais eficiente de implementar uma fila de prioridade.
 Objetos/Classes: Para encapsular os elementos e suas prioridades.
-Árvore de Prefixos (Trie)
-Contexto de uso: Uma estrutura de dados em forma de árvore usada para armazenar uma coleção de strings, otimizada para operações de busca e preenchimento automático baseadas em prefixos.
+
+### Árvore de Prefixos (Trie)
+**Contexto de uso:** Uma estrutura de dados em forma de árvore usada para armazenar uma coleção de strings, otimizada para operações de busca e preenchimento automático baseadas em prefixos.
 Aplicações:
 Autocompletar e sugestão de palavras em motores de busca e teclados.
 Verificação ortográfica.
@@ -147,9 +150,11 @@ Ineficiente para strings longas e pouca similaridade: Se as strings forem muito 
 Principais elementos da linguagem utilizados para construção:
 Objetos/Classes: Para representar os nós da trie (com um mapa de filhos e um indicador de fim de palavra).
 Iteração sobre strings: Para percorrer os caracteres de uma string e navegar pela trie.
-Árvore (Tree)
-Contexto de uso: Uma estrutura de dados hierárquica composta por nós conectados por arestas. O nó superior é a raiz, e cada nó pode ter zero ou mais filhos.
-Aplicações:
+
+### Árvore (Tree)
+**Contexto de uso:** Uma estrutura de dados hierárquica composta por nós conectados por arestas. O nó superior é a raiz, e cada nó pode ter zero ou mais filhos.
+
+**Aplicações:**
 Representação de hierarquias (sistemas de arquivos, DOM de HTML).
 Estruturas de sintaxe em compiladores.
 Organização de dados para busca e classificação.
@@ -181,7 +186,8 @@ Overhead de balanceamento: Pequeno custo adicional nas operações de inserção
 Principais elementos da linguagem utilizados para construção:
 Objetos/Classes: Para representar os nós (com value, left, right e um campo para armazenar a altura ou o fator de balanceamento).
 Recursão: Para travessia e operações de balanceamento (rotações).
-Árvore Rubro-Negra (Red-Black Tree)
+
+### Árvore Rubro-Negra (Red-Black Tree)
 Contexto de uso: Outra BST auto-balanceada, com regras específicas de coloração de nós (vermelho ou preto) e propriedades que garantem o balanceamento. Oferece complexidade O(logn) para todas as operações principais, com um balanceamento menos rígido que a AVL, mas ainda eficiente.
 Aplicações:
 Muitas implementações de Map e Set em bibliotecas padrão de linguagens de programação (incluindo TreeMap e TreeSet em Java).
@@ -205,7 +211,8 @@ Complexidade de construção: A construção da árvore leva tempo O(n).
 Principais elementos da linguagem utilizados para construção:
 Arrays: Para representar a árvore de segmento (geralmente como um array, onde os filhos de um nó em index i estão em 2i e 2i+1).
 Recursão: Para construir a árvore e realizar consultas.
-Árvore Fenwick (Fenwick Tree) / Árvore Indexada Binária
+
+### Árvore Fenwick (Fenwick Tree) / Árvore Indexada Binária
 Contexto de uso: Uma estrutura de dados compacta que permite calcular somas de prefixo e atualizar elementos de um array em tempo logarítmico (O(logn)). É mais simples de implementar e consome menos memória do que uma Árvore de Segmento para algumas operações.
 Aplicações:
 Cálculo de somas de prefixo eficientes.
