@@ -6,18 +6,23 @@
 
 **Aplicações:**
 <ul>
-<li>• Implementação de outras estruturas de dados como pilhas e filas.</li>
-• Gerenciamento de memória (por exemplo, na alocação e desalocação de blocos de memória).
-• Listas de reprodução de músicas onde a ordem e a facilidade de adicionar/remover são importantes.
-• Sistemas de arquivos onde os blocos de dados não são contíguos.
+<li>Implementação de outras estruturas de dados como pilhas e filas.</li>
+<li>Gerenciamento de memória (por exemplo, na alocação e desalocação de blocos de memória).</li>
+<li>Listas de reprodução de músicas onde a ordem e a facilidade de adicionar/remover são importantes.</li>
+<li>Sistemas de arquivos onde os blocos de dados não são contíguos.</li>
 </ul>
+
 **Constrains/Downsides:**
-• Acesso lento por índice: Para acessar um elemento em uma posição específica, é preciso percorrer a lista desde o início, o que leva tempo O(n).
-• Maior consumo de memória: Cada nó precisa armazenar não apenas o dado, mas também um ponteiro para o próximo nó.
+<ul>
+<li>Acesso lento por índice: Para acessar um elemento em uma posição específica, é preciso percorrer a lista desde o início, o que leva tempo O(n)</li>
+<li><Maior consumo de memória: Cada nó precisa armazenar não apenas o dado, mas também um ponteiro para o próximo nó./li>
+</ul>
 
 **Principais elementos da linguagem utilizados para construção:**
-• Objetos/Classes: Para representar os nós da lista (com value e next).
-• Referências: Para apontar de um nó para o próximo.
+<ul>
+<li><strong>Objetos/Classes:</strong> Para representar os nós da lista (com value e next).</li>
+<li><strong>Referências:</strong> Para apontar de um nó para o próximo.</li>
+</ul>
 
 #### Lista Duplamente Ligada (Doubly Linked List)
 **Contexto de uso:** Similar à lista encadeada, mas cada nó também aponta para o nó anterior. Isso permite travessia bidirecional e inserções/exclusões mais eficientes em ambas as direções.
