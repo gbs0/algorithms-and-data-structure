@@ -15,7 +15,7 @@
 **Constrains/Downsides:**
 <ul>
 <li>Acesso lento por índice: Para acessar um elemento em uma posição específica, é preciso percorrer a lista desde o início, o que leva tempo O(n)</li>
-<li><Maior consumo de memória: Cada nó precisa armazenar não apenas o dado, mas também um ponteiro para o próximo nó.</li>
+<li>Maior consumo de memória: Cada nó precisa armazenar não apenas o dado, mas também um ponteiro para o próximo nó.</li>
 </ul>
 
 **Principais elementos da linguagem utilizados para construção:**
