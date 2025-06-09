@@ -26,44 +26,74 @@
 
 #### Lista Duplamente Ligada (Doubly Linked List)
 **Contexto de uso:** Similar à lista encadeada, mas cada nó também aponta para o nó anterior. Isso permite travessia bidirecional e inserções/exclusões mais eficientes em ambas as direções.
+
 **Aplicações:**
-Histórico de "voltar" e "avançar" em navegadores web.
-Implementação de caches LRU (Least Recently Used), onde elementos acessados recentemente são movidos para o início.
-Editores de texto para operações de desfazer/refazer.
-Constrains/Downsides:
-Maior consumo de memória: Cada nó requer um ponteiro adicional para o nó anterior.
-Complexidade um pouco maior na implementação: As operações de inserção e exclusão exigem a atualização de dois ponteiros em vez de um.
-Principais elementos da linguagem utilizados para construção:
-Objetos/Classes: Para representar os nós (com value, next e prev).
-Referências: Para apontar para os nós anterior e posterior.
-Fila (Queue)
-Contexto de uso: Segue o princípio FIFO (First-In, First-Out), onde o primeiro elemento adicionado é o primeiro a ser removido. É usada para gerenciar recursos que precisam ser processados em uma ordem específica.
-Aplicações:
-Fila de impressão em sistemas operacionais.
-Gerenciamento de tarefas em servidores (por exemplo, enfileiramento de requisições web).
-Simulações de eventos em sistemas.
-Largura de busca em grafos (BFS - Breadth-First Search).
-Constrains/Downsides:
-Acesso limitado: Apenas o elemento no "início" da fila é diretamente acessível para remoção, e novos elementos são adicionados apenas no "fim".
-Redimensionamento em arrays: Se implementada com arrays, pode haver custos de redimensionamento e deslocamento de elementos em operações.
-Principais elementos da linguagem utilizados para construção:
-Arrays: Para uma implementação simples (usando push e shift).
-Listas Encadeadas: Para uma implementação mais eficiente em termos de tempo para grandes filas.
-Pilha (Stack)
-Contexto de uso: Segue o princípio LIFO (Last-In, First-Out), onde o último elemento adicionado é o primeiro a ser removido. É usada para gerenciar operações que precisam ser desfeitas na ordem inversa em que foram realizadas.
-Aplicações:
-Gerenciamento de chamadas de funções (call stack).
-Operações de desfazer/refazer em softwares.
-Verificação de balanceamento de parênteses em expressões.
-Profundidade de busca em grafos (DFS - Depth-First Search).
-Avaliação de expressões pós-fixadas (notação polonesa reversa).
-Constrains/Downsides:
-Acesso limitado: Apenas o elemento no "topo" da pilha é diretamente acessível.
-Overflow: Se a pilha crescer demais, pode ocorrer um "stack overflow" (em implementações baseadas em arrays, pode levar a problemas de memória).
-Principais elementos da linguagem utilizados para construção:
-Arrays: Para uma implementação simples (usando push e pop).
-Listas Encadeadas: Para uma implementação mais flexível em termos de tamanho.
-Tabela de Hash (Hash Table)
+<ul>
+<li>Histórico de "voltar" e "avançar" em navegadores web.</li>
+<li>Implementação de caches LRU (Least Recently Used), onde elementos acessados recentemente são movidos para o início.</li>
+<li>Editores de texto para operações de desfazer/refazer.</li>
+</ul>
+
+**Constrains/Downsides:**
+<ul>
+<li>Maior consumo de memória: Cada nó requer um ponteiro adicional para o nó anterior.</li>
+<li>Complexidade um pouco maior na implementação: As operações de inserção e exclusão exigem a atualização de dois ponteiros em vez de um.</li>
+</ul>
+
+**Principais elementos da linguagem utilizados para construção:**
+<ul>
+<li>Objetos/Classes: Para representar os nós (com value, next e prev).</li>
+<li>Referências: Para apontar para os nós anterior e posterior.</li>
+</ul>
+
+#### Fila (Queue)
+**Contexto de uso:** Segue o princípio FIFO (First-In, First-Out), onde o primeiro elemento adicionado é o primeiro a ser removido. É usada para gerenciar recursos que precisam ser processados em uma ordem específica.
+
+**Aplicações:**
+<ul>
+<li>Fila de impressão em sistemas operacionais.</li>
+<li>Gerenciamento de tarefas em servidores (por exemplo, enfileiramento de requisições web).</li>
+<li>Simulações de eventos em sistemas.</li>
+<li>Largura de busca em grafos (BFS - Breadth-First Search).</li>
+</ul>
+
+**Constrains/Downsides:**
+<ul>
+<li>Acesso limitado: Apenas o elemento no "início" da fila é diretamente acessível para remoção, e novos elementos são adicionados apenas no "fim".</li>
+<li>Redimensionamento em arrays: Se implementada com arrays, pode haver custos de redimensionamento e deslocamento de elementos em operações.</li>
+</ul>
+
+**Principais elementos da linguagem utilizados para construção:**
+<ul>
+<li><strong>Arrays:</strong> Para uma implementação simples (usando push e shift).</li>
+<li><strong>Listas Encadeadas:</strong> Para uma implementação mais eficiente em termos de tempo para grandes filas.</li>
+</ul>
+
+#### Pilha (Stack)
+**Contexto de uso:** Segue o princípio LIFO (Last-In, First-Out), onde o último elemento adicionado é o primeiro a ser removido. É usada para gerenciar operações que precisam ser desfeitas na ordem inversa em que foram realizadas.
+
+**Aplicações:**
+<ul>
+<li>Gerenciamento de chamadas de funções (call stack).</li>
+<li>Operações de desfazer/refazer em softwares.</li>
+<li>Verificação de balanceamento de parênteses em expressões.</li>
+<li>Profundidade de busca em grafos (DFS - Depth-First Search).</li>
+<li>Avaliação de expressões pós-fixadas (notação polonesa reversa).</li>
+</ul>
+
+**Constrains/Downsides:**
+<ul>
+<li>Acesso limitado: Apenas o elemento no "topo" da pilha é diretamente acessível.</li>
+<li>Overflow: Se a pilha crescer demais, pode ocorrer um "stack overflow" (em implementações baseadas em arrays, pode levar a problemas de memória).</li>
+</ul>
+
+**Principais elementos da linguagem utilizados para construção:**
+<ul>
+<li>Arrays: Para uma implementação simples (usando push e pop).</li>
+<li>Listas Encadeadas: Para uma implementação mais flexível em termos de tamanho.</li>
+</ul>
+
+#### Tabela de Hash (Hash Table)
 Contexto de uso: Armazenar pares chave-valor e permitir acesso rápido aos valores através de suas chaves. Usa uma função de hash para mapear chaves para índices em um array.
 Aplicações:
 Dicionários e objetos em linguagens de programação.
