@@ -165,7 +165,7 @@
 <li>Simulações de eventos discretos.</li>
 </ul>
 
-Constrains/Downsides:
+**Constrains/Downsides:**
 <ul>
 <li>Complexidade de implementação: Geralmente implementada usando um heap, o que adiciona alguma complexidade em comparação com uma fila simples.</li>
 <li>Desempenho: Inserções e remoções podem levar tempo logarítmico (O(logn)) devido à necessidade de manter a propriedade de heap.</li>
@@ -252,6 +252,8 @@ Constrains/Downsides:
 <li>Objetos/Classes: Para representar os nós (com value, left e right).</li>
 <li>Recursão: Para operações como busca, inserção e exclusão.</li>
 </ul>
+
+-------
 
 ### Árvore AVL (AVL Tree)
 **Contexto de uso:** Uma BST auto-balanceada. A altura das subárvores esquerda e direita de qualquer nó difere no máximo em um. Isso garante que as operações de busca, inserção e exclusão tenham complexidade logarítmica (O(logn)) no pior caso.
