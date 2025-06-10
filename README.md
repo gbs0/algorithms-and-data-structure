@@ -1,6 +1,6 @@
-## Estruturas de Dados
+# Estruturas de Dados
 
-### Lista Encadeada (Linked List)
+## Lista Encadeada (Linked List)
 
 **Contexto de uso:** Armazenar uma coleção de elementos em uma sequência linear, onde cada elemento (nó) aponta para o próximo. É útil quando você precisa de inserções e exclusões eficientes no meio da lista, sem a necessidade de realocação de memória como em arrays dinâmicos.
 
@@ -24,7 +24,7 @@
 <li><strong>Referências:</strong> Para apontar de um nó para o próximo.</li>
 </ul>
 
-### Lista Duplamente Ligada (Doubly Linked List)
+## Lista Duplamente Ligada (Doubly Linked List)
 **Contexto de uso:** Similar à lista encadeada, mas cada nó também aponta para o nó anterior. Isso permite travessia bidirecional e inserções/exclusões mais eficientes em ambas as direções.
 
 **Aplicações:**
@@ -46,7 +46,7 @@
 <li>Referências: Para apontar para os nós anterior e posterior.</li>
 </ul>
 
-### Fila (Queue)
+## Fila (Queue)
 **Contexto de uso:** Segue o princípio FIFO (First-In, First-Out), onde o primeiro elemento adicionado é o primeiro a ser removido. É usada para gerenciar recursos que precisam ser processados em uma ordem específica.
 
 **Aplicações:**
