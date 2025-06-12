@@ -16,13 +16,19 @@ describe 'Maximum Difference Between Adjacent Elements in a Circular Array' do
 
   it 'Case 3' do
     nums = [-2,-5]
-    excepted = 3
+    expected = 3
     expect(max_adjacent_distance(nums)).to eq(expected)
   end
 
   it 'Case 4' do
     nums = [-2,1,-5]
     expected = 6
+    expect(max_adjacent_distance(nums)).to eq(expected)
+  end
+
+  it 'Case  5' do
+    nums = [3,2,-5,-3]
+    expected = 7
     expect(max_adjacent_distance(nums)).to eq(expected)
   end
 end
