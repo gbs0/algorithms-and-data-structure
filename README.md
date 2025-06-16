@@ -18,7 +18,8 @@
 * `A` [Grafo (Graph)](./data-structures/graph/README.pt-BR.md) (ambos dirigidos e não direcionados)
 * `A` [Conjunto Disjunto (Disjoint Set)](./data-structures/disjoint-set/README.pt-BR.md)
 * `A` [Filtro Bloom (Bloom Filter)](./data-structures/bloom-filter/README.pt-BR.md)
-
+* [Padrões de Código](./data-structures/README.pt-BR.md)
+* `B` [Lista Encadeada (Prefix Sum)](./code-patterns/prefix-sum/README.pt-BR.md)
 -------
 
 # Estruturas de Dados
@@ -450,3 +451,146 @@
 </ul>
 
 -------
+
+### Padrões de Código
+**Contexto de uso:** Um padrão de código é um conjunto de regras e boas práticas que ajudam a escrever código para resolução de diferentes tipos de problemas, de forma consistente e eficiente, seguindo alguns padrões matemáticos ou lógicos.
+
+**Aplicações:**
+<ul>
+<li>Código de implementação de algoritmos.</li>
+<li>Código de testes de unidade.</li>
+<li>Código de documentação.</li>
+</ul>
+
+**Principais elementos da linguagem utilizados para construção:**
+<ul>
+<li>Classes/Objetos: Para representar os padrões de código.</li>
+<li>Funções: Para implementar as regras e práticas.</li>
+</ul>
+
+
+### 1. Soma de prefixo (Prefix Sum)
+
+A Soma de Prefixo envolve o pré-processamento de um array para criar um novo array onde cada elemento no índice `i` representa a soma dos elementos do array original desde o início até `i`. Isso permite consultas eficientes de soma em sub-arrays.
+
+**Contexto de uso:**  Utilize este padrão quando precisar realizar múltiplas consultas de soma em um sub-array ou precisar calcular somas cumulativas.
+
+**Problema Exemplo:**
+
+Dado um array `nums`, responda quantas múltiplas consultas sobre a soma dos elementos dentro de um intervalo específico [i, j].
+
+Exemplo:
+```
+Entrada: nums = [1, 2, 3, 4, 5, 6], i = 1, j = 3
+
+Saída: 9
+```
+
+**Explicação:**
+Pré-processe o array A para criar um array de soma de prefixo: `P = [1, 3, 6, 10, 15, 21]`
+
+Para encontrar a soma entre os índices `i` e `j`, use a fórmula: `P[j] - P[i-1]`
+
+-------
+
+### 2. Ponteiros duplos (Two Pointers)
+O padrão Ponteiros Duplos envolve o uso de dois ponteiros para iterar por um array ou lista, frequentemente utilizado para encontrar pares ou elementos que atendam a critérios específicos.
+
+**Contexto de uso:** Utilize este padrão ao lidar com arrays ou listas ordenadas onde você precisa encontrar pares que satisfaçam uma condição específica.
+
+Problema Exemplo:
+
+Encontre dois números em um array ordenado que somem um valor alvo.
+
+Exemplo:
+```
+Entrada: nums = [1, 2, 3, 4, 6], target = 6
+
+Saída: [1, 3]
+```
+
+**Explicação:**
+
+Inicialize dois ponteiros, um no início (left) e outro no final (right) do array.
+
+Verifique a soma dos elementos nos dois ponteiros.
+
+Se a soma for igual ao target, retorne os índices.
+
+Se a soma for menor que o target, mova o ponteiro `left` para a direita.
+
+Se a soma for maior que o target, mova o ponteiro `right` para a esquerda.
+
+-------
+
+### 3. anela Deslizante (Sliding Window)
+
+O padrão Janela Deslizante é utilizado para encontrar um sub-array ou sub-string que satisfaça uma condição específica, otimizando a complexidade de tempo ao manter uma "janela" de elementos.
+
+**Contexto de uso:** Utilize este padrão ao lidar com problemas que envolvem sub-arrays ou sub-strings contíguos.
+
+Problema Exemplo:
+Encontre a soma máxima de um sub-array de tamanho k.
+
+Exemplo:
+```
+Entrada: nums = [2, 1, 5, 1, 3, 2], k = 3
+
+Saída: 9
+```
+
+**Explicação:**
+
+Comece com a soma dos primeiros k elementos.
+
+Deslize a janela um elemento por vez, subtraindo o elemento que sai da janela e adicionando o novo elemento.
+
+Mantenha o controle da soma máxima encontrada.
+
+-------
+### 4. Ponteiros Rápido e Lento (Fast & Slow Pointers)
+O padrão Ponteiros Rápido e Lento (Tartaruga e Lebre) é usado para detectar ciclos em listas encadeadas e outras estruturas semelhantes.
+
+**Contexto de uso:** Utilize este padrão quando precisar identificar a presença de ciclos em estruturas de dados como listas encadeadas, ou em problemas onde a velocidade relativa de dois ponteiros pode ajudar a encontrar um estado específico.
+
+Problema Exemplo:
+Detectar se uma lista encadeada possui um ciclo.
+
+Exemplo:
+
+```
+Entrada: Uma lista encadeada head.
+
+Saída: true se houver um ciclo, false caso contrário.
+```
+
+**Explicação:**
+
+Inicialize dois ponteiros: um movendo um passo por vez (lento) e outro movendo dois passos por vez (rápido).
+
+Se houver um ciclo, o ponteiro rápido eventualmente encontrará o ponteiro lento.
+
+Se o ponteiro rápido chegar ao final da lista (ou seja, nil), não há ciclo.
+
+-------
+
+### 5. Reversão de Lista Encadeada In-place (LinkedList In-place Reversal)
+O padrão Reversão de Lista Encadeada In-place reverte partes de uma lista encadeada sem usar espaço extra (memória adicional significativa).
+
+**Contexto de uso:** Utilize este padrão quando precisar inverter seções de uma lista encadeada de forma eficiente, sem alocar uma nova estrutura de dados para armazenar a lista invertida.
+
+Problema Exemplo:
+Reverter uma sublista de uma lista encadeada da posição m até n.
+
+Exemplo:
+```
+Entrada: head = [1, 2, 3, 4, 5], m = 2, n = 4
+
+Saída: [1, 4, 3, 2, 5]
+```
+
+**Explicação:**
+
+Identifique o início e o fim da sublista a ser revertida.
+
+Reverta os nós "in-place" ajustando os ponteiros (next) de cada nó. Isso geralmente envolve manter ponteiros para o nó anterior, o nó atual e o próximo nó enquanto você itera.
