@@ -594,3 +594,75 @@ Saída: [1, 4, 3, 2, 5]
 Identifique o início e o fim da sublista a ser revertida.
 
 Reverta os nós "in-place" ajustando os ponteiros (next) de cada nó. Isso geralmente envolve manter ponteiros para o nó anterior, o nó atual e o próximo nó enquanto você itera.
+
+-------
+
+### 6. Pilha Monotônica (Monotonic Stack)
+
+O padrão **Pilha Monotônica** usa uma pilha para manter uma sequência de elementos em uma ordem específica (crescente ou decrescente).
+
+Contexto de uso: Utilize este padrão para problemas que exigem encontrar o próximo elemento maior ou menor, ou para otimizar cálculos envolvendo intervalos onde a monotonicidade dos elementos é importante.
+
+Problema Exemplo:
+Encontre o próximo elemento maior para cada elemento em um array. A saída deve ser -1 se o elemento maior não existir.
+
+Exemplo:
+
+Entrada: nums = [2, 1, 2, 4, 3]
+
+Saída: [4, 2, 4, -1, -1]
+
+Explicação:
+Use uma pilha para acompanhar os elementos para os quais ainda não encontramos o próximo elemento maior.
+
+Itere pelo array e, para cada elemento, remova (pop) elementos da pilha até encontrar um elemento maior.
+
+Se a pilha não estiver vazia, defina o resultado para o índice no topo da pilha como o elemento atual.
+
+Adicione (push) o elemento atual à pilha.
+
+### 7. Top 'K' Elementos (Top 'K' Elements)
+O padrão **Top 'K' Elementos** encontra os k maiores ou menores elementos em um array ou fluxo de dados usando heaps ou ordenação.
+
+Contexto de uso: Utilize este padrão quando precisar identificar os elementos mais proeminentes (maiores ou menores) de um conjunto de dados, como os k produtos mais vendidos, os k usuários mais ativos, ou o k-ésimo maior valor em um conjunto.
+
+Problema Exemplo:
+Encontre o k-ésimo maior elemento em um array não ordenado.
+
+Exemplo:
+
+Entrada: nums = [3, 2, 1, 5, 6, 4], k = 2
+
+Saída: 5
+
+Explicação:
+Use um min-heap de tamanho k para acompanhar os k maiores elementos.
+
+Itere pelo array, adicionando elementos ao heap.
+
+Se o tamanho do heap exceder k, remova o menor elemento do heap (que será a raiz, em um min-heap).
+
+A raiz do heap será o k-ésimo maior elemento.
+
+### 8. Intervalos Sobrepostos (Overlapping Intervals)
+O padrão **Intervalos Sobrepostos** é utilizado para unir ou manipular intervalos que se sobrepõem em um array.
+
+Em um array de intervalos ordenado pelo tempo de início, dois intervalos [a, b] e [c, d] se sobrepõem se b >= c (isto é, o tempo de fim do primeiro intervalo é maior ou igual ao tempo de início do segundo intervalo).
+
+**Contexto de uso:** Utilize este padrão em problemas onde você precisa consolidar intervalos de tempo, como agendamentos, períodos de disponibilidade, ou fusão de segmentos de dados que se interseccionam.
+
+Problema Exemplo:
+Declaração do Problema: Mesclar todos os intervalos sobrepostos.
+
+Exemplo:
+
+Entrada: intervals = [[1, 3], [2, 6], [8, 10], [15, 18]]
+
+Saída: [[1, 6], [8, 10], [15, 18]]
+
+Explicação:
+Ordene os intervalos pelo tempo de início.
+Crie uma lista vazia chamada merged para armazenar os intervalos mesclados.
+Itere pelos intervalos e verifique se ele se sobrepõe com o último intervalo na lista merged.
+Se houver sobreposição, mescle os intervalos atualizando o tempo de fim do último intervalo em merged.
+Se não houver sobreposição, simplesmente adicione o intervalo atual à lista merged.
