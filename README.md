@@ -854,6 +854,76 @@ Percorra cada nível e adicione os filhos dos nós atuais à fila.
 </ul>
 <li>A fila está vazia, a travessia termina.</li>
 </ol>
----------
 
 ---------
+
+### 13. Travessia de Matriz (Matrix Traversal)
+A **Travessia de Matriz** envolve percorrer elementos em uma matriz usando diferentes técnicas (como DFS, BFS, etc.).
+
+**Contexto de uso:** Utilize este padrão para problemas que envolvem percorrer grades 2D ou matrizes horizontalmente, verticalmente ou diagonalmente. É fundamental em jogos, processamento de imagens e algoritmos de caminho.
+
+Problema Exemplo:
+Realize o preenchimento de inundação (flood fill) em uma grade 2D. Mude todas as células conectadas à célula inicial para uma nova cor.
+
+Exemplo:
+
+Entrada: image = [[1,1,1],[1,1,0],[1,0,1]], sr = 1 (linha inicial), sc = 1 (coluna inicial), newColor = 2
+
+Saída: [[2,2,2],[2,2,0],[2,0,1]]
+
+Explicação:
+Use DFS ou BFS para percorrer a matriz a partir da célula inicial fornecida.
+Mude a cor das células conectadas para a nova cor.
+
+A partir da célula (1,1) (valor 1), o algoritmo precisa encontrar todos os 1s adjacentes (acima, abaixo, esquerda, direita) e mudar sua cor para 2. Note que o 0 na posição (1,2) e o 1 na posição (2,2) não são conectados ao 1 central (o 1 em (2,2) é conectado apenas ao 0 em (2,1) e ao 0 em (1,2), não ao 1s originais que estão sendo preenchidos).
+
+---------
+
+### 14. Backtracking
+Backtracking explora todas as soluções possíveis e retrocede (backtracks) quando um caminho de solução falha.
+
+Contexto de uso: Utilize este padrão quando precisar encontrar todas (ou algumas) soluções para um problema que satisfaça restrições dadas. É amplamente usado em problemas combinatórios, como gerar permutações, combinações ou subconjuntos, ou em problemas de tomada de decisão onde múltiplos caminhos precisam ser explorados.
+
+Problema Exemplo:
+Gerar todas as permutações de uma dada lista de números.
+
+Exemplo:
+
+Entrada: nums = [1, 2, 3]
+
+Saída: [[1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1]]
+
+Explicação:
+Use recursão para gerar as permutações.
+Para cada elemento, inclua-o na permutação atual e recursivamente gere as permutações restantes.
+Retroceda (backtrack) quando todas as permutações para um dado caminho forem geradas.
+
+O processo pode ser visualizado como uma árvore de decisão. Em cada nível da recursão, escolhemos um número não utilizado para adicionar à permutação atual. Uma vez que uma permutação completa é formada (quando o tamanho da permutação atual é igual ao tamanho do array original), ela é adicionada ao resultado. Então, o algoritmo "desfaz" a última escolha e tenta uma opção diferente, explorando assim todos os caminhos.
+
+---------
+
+### 15. Padrões de Programação Dinâmica (Dynamic Programming - DP)
+A Programação Dinâmica (DP) envolve a quebra de problemas maiores em subproblemas menores, resolvendo-os usando uma abordagem de baixo para cima (bottom-up) ou de cima para baixo (top-down) com memoização.
+
+Contexto de uso: Utilize este padrão para problemas que possuem subproblemas sobrepostos e estrutura ótima de subproblemas. Isso significa que a solução de um problema maior pode ser construída a partir das soluções ótimas de seus subproblemas.
+
+A própria DP possui vários sub-padrões. Alguns dos mais importantes são:
+
+Números de Fibonacci
+Problema da Mochila 0/1 (0/1 Knapsack)
+Maior Subsequência Comum (Longest Common Subsequence - LCS)
+Maior Subsequência Crescente (Longest Increasing Subsequence - LIS)
+Soma de Subconjuntos (Subset Sum)
+Multiplicação em Cadeia de Matrizes (Matrix Chain Multiplication)
+Problema Exemplo:
+Calcular o n-ésimo número de Fibonacci.
+
+Exemplo:
+
+Entrada: n = 5
+
+Saída: 5 (Os primeiros cinco números de Fibonacci são 0, 1, 1, 2, 3, 5)
+
+Explicação:
+Use uma abordagem de baixo para cima (bottom-up) para calcular o n-ésimo número de Fibonacci.
+Comece com os dois primeiros números (0 e 1) e itere para calcular os próximos números usando a relação de recorrência: dp[i] = dp[i - 1] + dp[i - 2].
