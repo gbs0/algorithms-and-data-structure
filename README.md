@@ -20,6 +20,9 @@
 * `A` [Filtro Bloom (Bloom Filter)](./data-structures/bloom-filter/README.pt-BR.md)
 * [Padrões de Código](./data-structures/README.pt-BR.md)
 * `B` [Lista Encadeada (Prefix Sum)](./code-patterns/prefix-sum/README.pt-BR.md)
+* `B` [Pilha Monotônica (Monotonic Stack)](./code-patterns/monotonic_stack/README.pt-BR.md)
+* `B` [Lista Duplamente Ligada (Doubly Linked List)](./code-patterns/doubly-linked-list/README.pt-BR.md)
+
 -------
 
 # Estruturas de Dados
@@ -452,7 +455,8 @@
 
 -------
 
-### Padrões de Código
+## Padrões de Código
+
 **Contexto de uso:** Um padrão de código é um conjunto de regras e boas práticas que ajudam a escrever código para resolução de diferentes tipos de problemas, de forma consistente e eficiente, seguindo alguns padrões matemáticos ou lógicos.
 
 **Aplicações:**
@@ -523,7 +527,7 @@ Se a soma for maior que o target, mova o ponteiro `right` para a esquerda.
 
 -------
 
-### 3. anela Deslizante (Sliding Window)
+### 3. Janela Deslizante (Sliding Window)
 
 O padrão Janela Deslizante é utilizado para encontrar um sub-array ou sub-string que satisfaça uma condição específica, otimizando a complexidade de tempo ao manter uma "janela" de elementos.
 
@@ -690,8 +694,166 @@ Se estiver, pesquise nessa metade; caso contrário, pesquise na outra metade.
 
 ---------
 
+### 10. Travessia de Árvore Binária (Binary Tree Traversal)
+A **Travessia de Árvore Binária** envolve visitar todos os nós em uma árvore binária em uma ordem específica. Existem três ordens principais:
+
+<ul>
+<li>Pré-Ordem (PreOrder): raiz -> esquerda -> direita</li>
+<li>Em Ordem (InOrder): esquerda -> raiz -> direita</li>
+<li>Pós-Ordem (PostOrder): esquerda -> direita -> raiz</li>
+</ul>
+
+**Contexto de uso:** Utilize este padrão para processar ou exibir dados armazenados em uma estrutura de árvore binária de uma maneira sistemática. Diferentes ordens de travessia são úteis para tarefas específicas, como copiar uma árvore (Pré-Ordem), obter elementos ordenados (Em Ordem em uma Árvore de Busca Binária), ou deletar uma árvore (Pós-Ordem).
+
+Problema Exemplo:
+Declaração do Problema: Realize a travessia Em Ordem de uma árvore binária.
+
+Entrada: root = [1, null, 2, 3] (representa a árvore: 1 como raiz, sem filho esquerdo, 2 como filho direito de 1, e 3 como filho esquerdo de 2)
+```
+   1
+    \
+     2
+    /
+   3
+
+Saída: [1, 3, 2]
+```
+
+Explicação:
+A travessia Em Ordem visita os nós na sequência: esquerda, raiz, direita.
+
+Para a árvore `1 -> 2 (direita) -> 3 (esquerda de 2)`
+
+<ol>
+<li>Começa na raiz (1).</li>
+<li>Vai para o filho esquerdo (null). Não há nada, então retorna.</li>
+<li>Visita a raiz (1). Adiciona 1 à lista.</li>
+
+<li>Vai para o filho direito (2).</li>
+  • Para o nó 2:
+  <ol>
+    <li>Vai para o filho esquerdo (3).</li>
+      • Para o nó 3:
+      <ol>
+        <li>Vai para o filho esquerdo (null).</li>
+        <li>Visita a raiz (3). Adiciona 3 à lista.</li>
+        <li>Vai para o filho direito (null).</li>
+      </ol>
+
+  <li>Retorna de 3.</li>
+  <li>Visita a raiz (2). Adiciona 2 à lista.</li>
+  <li>Vai para o filho direito (null).</li>
+  </ol>
+  • Retorna de 2.
+
+  • Termina.
+</ol>
+
+O resultado final é [1, 3, 2].
+
+
+Use recursão ou uma pilha para percorrer a árvore nesta ordem.
+
 ---------
 
+### 11. Busca em Profundidade (Depth-First Search - DFS)
+A **Busca em Profundidade (DFS)** é uma técnica de travessia que explora o mais fundo possível em um ramo antes de retroceder (backtracking).
+
+**Contexto de uso:** Utilize este padrão para explorar todos os caminhos ou ramos em grafos ou árvores. É ideal para problemas que envolvem encontrar um caminho específico, verificar conectividade, ou gerar todas as permutações/combinações.
+
+Problema Exemplo:
+Encontrar todos os caminhos da raiz às folhas em uma árvore binária.
+
+Exemplo:
+
+Entrada: root = [1, 2, 3, null, 5] (representa a árvore: 1 como raiz, 2 como filho esquerdo, 3 como filho direito, e 5 como filho direito de 2)
+```
+   1
+  / \
+ 2   3
+  \
+   5
+
+Saída: ["1->2->5", "1->3"]
+```
+Explicação:
+Use recursão ou uma pilha para percorrer cada caminho da raiz às folhas.
+Registre cada caminho à medida que avança.
+
+<ul>
+<li>Para o caminho `1 -> 2 -> 5`:</li>
+  <ol>
+    <li>Começa na raiz 1.</li>
+    <li>Vai para o filho esquerdo 2.</li>
+    <li>Vai para o filho direito de 2, que é 5. 5 é uma folha, então o caminho "1->2->5" é registrado.</li>
+  </ol>
+
+<li>Para o caminho `1 -> 3`:</li>
+  <ol>
+      <li>Retorna ao 1 e vai para o filho direito 3. 3 é uma folha, então o caminho "1->3" é registrado.</li>
+  </ol>
+</ul>
+
+---------
+
+### 12. Busca em Largura (Breadth-First Search - BFS)
+A **Busca em Largura (BFS)** é uma técnica de travessia que explora os nós nível por nível em uma árvore ou grafo.
+
+**Contexto de uso:** Utilize este padrão para encontrar os caminhos mais curtos em grafos não ponderados ou para realizar travessias em ordem de nível em árvores. É ideal quando você precisa processar todos os nós em um determinado nível antes de passar para o próximo.
+
+Problema Exemplo:
+Realize a travessia em ordem de nível de uma árvore binária.
+
+Exemplo:
+
+12. Busca em Largura (Breadth-First Search - BFS)
+A Busca em Largura (BFS) é uma técnica de travessia que explora os nós nível por nível em uma árvore ou grafo.
+
+Contexto de uso: Utilize este padrão para encontrar os caminhos mais curtos em grafos não ponderados ou para realizar travessias em ordem de nível em árvores. É ideal quando você precisa processar todos os nós em um determinado nível antes de passar para o próximo.
+
+Problema Exemplo:
+Realize a travessia em ordem de nível de uma árvore binária.
+
+Exemplo:
+
+Entrada: root = [3, 9, 20, null, null, 15, 7] (representa a árvore: 3 como raiz, 9 como filho esquerdo, 20 como filho direito, 15 como filho esquerdo de 20, e 7 como filho direito de 20)
+```
+
+  3
+  / \
+9  20
+    / \
+  15  7
+
+Saída: [[3], [9, 20], [15, 7]]
+```
+
+Explicação:
+Use uma fila para acompanhar os nós em cada nível.
+Percorra cada nível e adicione os filhos dos nós atuais à fila.
+
+<ol>
+<li>Nível 0: Começa com a raiz 3 na fila.</li>
+<ul>
+  <li>Remova `3` da fila. Adicione `3` ao resultado do nível atual.</li>
+  <li>Adicione os filhos de `3` (`9` e `20`) à fila.</li>
+  <li>Resultado atual: `[[3]]`. Fila: `[9, 20]`</li>
+</ul>
+<li>Nível 1: A fila contém 9 e 20.</li>
+<ul>
+<li>Remova 9. Adicione 9 ao resultado do nível atual. Não tem filhos.</li>
+<li>Remova 20. Adicione 20 ao resultado do nível atual.</li>
+<li>Adicione os filhos de 20 (15 e 7) à fila.</li>
+<li>Resultado atual: [[3], [9, 20]]. Fila: [15, 7]</li>
+</ul>
+<li>Nível 2: A fila contém 15 e 7.</li>
+<ul>
+<li>Remova 15. Adicione 15 ao resultado do nível atual. Não tem filhos.</li>
+<li>Remova 7. Adicione 7 ao resultado do nível atual. Não tem filhos.</li>
+<li>Resultado atual: [[3], [9, 20], [15, 7]]. Fila: []</li>
+</ul>
+<li>A fila está vazia, a travessia termina.</li>
+</ol>
 ---------
 
 ---------
