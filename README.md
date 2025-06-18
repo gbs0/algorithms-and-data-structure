@@ -666,3 +666,32 @@ Crie uma lista vazia chamada merged para armazenar os intervalos mesclados.
 Itere pelos intervalos e verifique se ele se sobrepõe com o último intervalo na lista merged.
 Se houver sobreposição, mescle os intervalos atualizando o tempo de fim do último intervalo em merged.
 Se não houver sobreposição, simplesmente adicione o intervalo atual à lista merged.
+
+---------
+
+### 9. Busca Binária Modificada (Modified Binary Search)
+O padrão **Busca Binária Modificada** adapta a busca binária tradicional para resolver uma gama mais ampla de problemas, como encontrar elementos em arrays ordenados rotacionados.
+
+Contexto de uso: Utilize este padrão em problemas que envolvem arrays ordenados (ou arrays que foram rotacionados, mas mantêm suas propriedades de ordenação em partes) onde você precisa encontrar um elemento específico de forma eficiente, aproveitando a natureza ordenada dos dados.
+
+Problema Exemplo:
+Encontre um elemento em um array ordenado rotacionado.
+
+Exemplo:
+
+Entrada: nums = [4, 5, 6, 7, 0, 1, 2], target = 0
+
+Saída: 4 (o índice do target)
+
+Explicação:
+Execute a busca binária com uma verificação adicional para determinar qual metade do array está ordenada.
+Em seguida, verifique se o target está dentro do intervalo da metade ordenada.
+Se estiver, pesquise nessa metade; caso contrário, pesquise na outra metade.
+
+---------
+
+---------
+
+---------
+
+---------
