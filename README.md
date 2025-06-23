@@ -23,9 +23,10 @@
 * `B` [Pilha Monotônica (Monotonic Stack)](./code-patterns/monotonic_stack/README.pt-BR.md)
 * `B` [Lista Duplamente Ligada (Doubly Linked List)](./code-patterns/doubly-linked-list/README.pt-BR.md)
 
+
 -------
 
-# Estruturas de Dados
+# Estruturas de Dados (Data Structures)
 
 ## Lista Encadeada (Linked List)
 
@@ -806,15 +807,7 @@ Realize a travessia em ordem de nível de uma árvore binária.
 
 Exemplo:
 
-12. Busca em Largura (Breadth-First Search - BFS)
-A Busca em Largura (BFS) é uma técnica de travessia que explora os nós nível por nível em uma árvore ou grafo.
 
-Contexto de uso: Utilize este padrão para encontrar os caminhos mais curtos em grafos não ponderados ou para realizar travessias em ordem de nível em árvores. É ideal quando você precisa processar todos os nós em um determinado nível antes de passar para o próximo.
-
-Problema Exemplo:
-Realize a travessia em ordem de nível de uma árvore binária.
-
-Exemplo:
 
 Entrada: root = [3, 9, 20, null, null, 15, 7] (representa a árvore: 3 como raiz, 9 como filho esquerdo, 20 como filho direito, 15 como filho esquerdo de 20, e 7 como filho direito de 20)
 ```
@@ -918,12 +911,156 @@ Multiplicação em Cadeia de Matrizes (Matrix Chain Multiplication)
 Problema Exemplo:
 Calcular o n-ésimo número de Fibonacci.
 
+-------
+
+## Programação Dinâmica (Dynamic Programming - DP)
+
+### 16. Sequência de Fibonacci (Fibonacci Sequence)
+O padrão da Sequência de Fibonacci é útil quando a solução para um problema depende das soluções de instâncias menores do mesmo problema.
+
+Existe uma relação recursiva clara, frequentemente se assemelhando à clássica sequência de Fibonacci F(n)=F(n−1)+F(n−2).
+
+Contexto de uso: Este padrão é aplicado em uma vasta gama de problemas onde a solução de um problema em um determinado "passo" ou "tamanho" pode ser derivada diretamente das soluções dos passos ou tamanhos anteriores. É a base de muitos problemas de Programação Dinâmica e é fundamental para entender como decompor problemas maiores em subproblemas gerenciáveis.
+
+Problema Exemplo:
+Calcular o número de maneiras distintas de subir uma escada com n degraus, sabendo que você pode subir 1 ou 2 degraus por vez.
+
 Exemplo:
 
-Entrada: n = 5
+Entrada: n = 3 (3 degraus)
 
-Saída: 5 (Os primeiros cinco números de Fibonacci são 0, 1, 1, 2, 3, 5)
+Saída: 3
 
 Explicação:
-Use uma abordagem de baixo para cima (bottom-up) para calcular o n-ésimo número de Fibonacci.
-Comece com os dois primeiros números (0 e 1) e itere para calcular os próximos números usando a relação de recorrência: dp[i] = dp[i - 1] + dp[i - 2].
+Vamos analisar as formas de subir a escada:
+<ul>
+<li>Para 1 degrau (n=1): [1] (1 maneira) -> F(1)</li>
+<li>Para 2 degraus (n=2): [1, 1], [2] (2 maneiras) -> F(2)</li>
+<li>Para 3 degraus (n=3):</li>
+<ull>
+<li>Se o último passo foi de 1 degrau: você veio de n-1 = 2 degraus. As maneiras são [1, 1, 1] ou [2, 1].</li>
+<li>Se o último passo foi de 2 degraus: você veio de n-2 = 1 degrau. As maneiras são [1, 2].</li>
+<li>Total: 3 maneiras.</li>
+<li>Perceba que o número de maneiras para n degraus é a soma das maneiras para n-1 degraus e n-2 degraus, ou seja, maneiras(n) = maneiras(n-1) + maneiras(n-2).</li>
+</ul>
+</ul>
+
+Esta é a exata relação da sequência de Fibonacci, onde maneiras(n) corresponde ao (n+1)-ésimo termo da sequência (assumindo F(0)=0,F(1)=1).
+
+
+---------
+
+### 17. Algoritmo de Kadane (Kadane's Algorithm)
+O Algoritmo de Kadane é usado principalmente para resolver o Problema do Sub-array de Soma Máxima e suas variações, onde o problema pede para otimizar um sub-array contíguo dentro de um array numérico unidimensional.
+
+Contexto de uso: Utilize este algoritmo para encontrar a maior soma possível de um sub-array contíguo em um array. É extremamente eficiente, operando em tempo linear (O(n)). Aplicações incluem análise financeira para encontrar o período de maior lucro, ou em bioinformática para identificar regiões de alta densidade em sequências.
+
+Problema Exemplo:
+Encontrar o sub-array contíguo com a maior soma em um dado array de números inteiros.
+
+Exemplo:
+
+Entrada: nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+
+Saída: 6
+
+Explicação:
+O sub-array [4, -1, 2, 1] tem a maior soma, que é 6.
+
+O algoritmo de Kadane funciona mantendo duas variáveis principais:
+
+1. `current_max:` A soma máxima do sub-array que termina na posição atual.
+2. `global_max:` A soma máxima encontrada em qualquer sub-array até agora.
+
+Ao iterar pelo array, para cada número, current_max é atualizado para ser o maior entre:
+<ul>
+<li>O número atual (iniciando um novo sub-array).</li>
+<li>O número atual somado ao current_max anterior (estendendo o sub-array existente).global_max é sempre o maior valor entre o current_max e o global_max anterior.</li>
+</ul>
+
+---------
+
+### 18. Problema da Mochila 0/1 - (0/1 Knapsack)
+O padrão Problema da Mochila 0/1 é útil quando:
+
+1. Você tem um conjunto de itens, cada um com um peso e um valor.
+2. Você precisa selecionar um subconjunto desses itens.
+3. Há uma restrição no peso total (ou algum outro recurso) que você pode usar.
+4. Você quer maximizar (ou minimizar) o valor total dos itens selecionados.
+5. Cada item pode ser escolhido apenas uma vez (daí o "0/1" - você o pega ou não).
+
+**Contexto de uso:** Este é um problema clássico de otimização combinatória. É aplicado em cenários de alocação de recursos, como carregar um caminhão com itens para maximizar o valor, selecionar projetos com base em orçamentos e retornos, ou otimizar a seleção de anúncios para maximizar a receita dentro de um limite de espaço.
+
+Problema Exemplo:
+
+Dada uma mochila com capacidade máxima W e um conjunto de itens, onde cada item i tem um peso weights[i] e um valor values[i], determine o valor máximo que você pode colocar na mochila.
+
+Exemplo:
+
+Entrada:
+
+capacidade_mochila = 50
+pesos = [10, 20, 30]
+valores = [60, 100, 120]
+Saída: 220
+
+Explicação:
+A estratégia ótima é pegar os itens com pesos 20 e 30, totalizando um peso de 50 e um valor de 100 + 120 = 220. Se pegássemos o item de peso 10 e 30, teríamos 40 de peso e 60 + 120 = 180 de valor.
+
+O problema da mochila 0/1 é tipicamente resolvido usando Programação Dinâmica. Uma tabela dp é construída, onde dp[i][j] representa o valor máximo que pode ser obtido com os primeiros i itens e uma capacidade de j.
+
+---------
+
+### 19. Problema da Mochila Ilimitada (Unbounded Knapsack)
+O padrão Problema da Mochila Ilimitada é útil quando:
+
+<ul>
+<li>Você tem um conjunto de itens, cada um com um peso e um valor.</li>
+<li>Você precisa selecionar itens para maximizar o valor total.</li>
+<li>Há uma restrição no peso total (ou algum outro recurso) que você pode usar.</li>
+<li>Você pode selecionar cada item múltiplas vezes (ao contrário da Mochila 0/1, onde cada item pode ser escolhido apenas uma vez).</li>
+<li>O suprimento de cada item é considerado infinito.</li>
+</ul>
+
+**Contexto de uso:** Este padrão é aplicável em situações onde você pode reutilizar itens para preencher uma capacidade. Exemplos incluem encontrar o número mínimo de moedas para um determinado troco (se fosse minimização), determinar a melhor combinação de produtos que podem ser comprados repetidamente para maximizar um benefício dentro de um orçamento, ou otimizar a composição de um contêiner com diferentes tipos de pacotes ilimitados.
+
+Problema Exemplo:
+Dada uma mochila com capacidade máxima W e um conjunto de itens, onde cada item i tem um peso weights[i] e um valor values[i], e você pode pegar qualquer item quantas vezes quiser, determine o valor máximo que você pode colocar na mochila.
+
+Exemplo:
+
+Entrada:
+
+capacidade_mochila = 100
+pesos = [1, 30]
+valores = [1, 30]
+Saída: 100
+
+Explicação:
+A estratégia ótima é pegar o item de peso 1 e valor 1 cem vezes, totalizando um peso de 100 e um valor de 100. Se pegássemos o item de peso 30 três vezes, teríamos 90 de peso e 90 de valor, com espaço restante de 10.
+
+Para o problema da mochila ilimitada, a Programação Dinâmica também é usada. A diferença chave é que, ao decidir incluir um item, não subtraímos a capacidade e movemos para o item anterior (i-1). Em vez disso, continuamos considerando o mesmo item para a capacidade restante, permitindo que ele seja escolhido múltiplas vezes. A relação de recorrência muda para: dp[j] = max(dp[j], values[i] + dp[j - weights[i]]).
+
+------------
+
+### 20. Maior Subsequência Comum (Longest Common Subsequence - LCS)
+O padrão Maior Subsequência Comum (LCS) é útil quando você recebe duas sequências e precisa encontrar uma subsequência que aparece na mesma ordem em ambas as sequências dadas. Uma subsequência não exige que os elementos sejam contíguos na sequência original.
+
+Contexto de uso: Este padrão é amplamente utilizado em bioinformática (para comparar sequências de DNA), controle de versão de arquivos (para mostrar as diferenças entre duas versões de um documento), e em verificação de plágio. Ele ajuda a quantificar a similaridade entre duas sequências.
+
+Problema Exemplo:
+Dadas duas strings text1 e text2, retorne o comprimento da sua maior subsequência comum.
+
+Exemplo:
+
+Entrada: text1 = "abcde", text2 = "ace"
+
+Saída: 3
+
+Explicação:
+A maior subsequência comum é "ace", que tem comprimento 3.
+
+a está em ambas.
+c está em ambas.
+e está em ambas.
+
