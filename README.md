@@ -1191,4 +1191,103 @@ As possíveis partições onde cada parte é um palíndromo são:
 
 -----------
 
-### 26.
+### 26. Números de Catalan (Catalan Numbers)
+O padrão Números de Catalan é usado para resolver problemas combinatórios que podem ser decompostos em subproblemas menores e semelhantes. Os números de Catalan, C_n, aparecem em várias sequências de contagem em combinatória.
+
+Alguns dos casos de uso deste padrão incluem:
+
+Contar o número de expressões de parênteses válidas de um dado comprimento.
+Contar o número de árvores de busca binária distintas que podem ser formadas com n nós.
+Contar o número de maneiras de triangulizar um polígono com n+2 lados.
+Contar o número de caminhos de grade que não cruzam a diagonal principal.
+Contexto de uso: Este padrão é específico para problemas de contagem que exibem uma estrutura recursiva particular, onde a solução para n depende de uma soma de produtos de soluções para i e n−1−i. É fundamental em campos como algoritmos, teoria dos grafos e combinatória.
+
+Problema Exemplo:
+Calcular o n-ésimo número de Catalan.
+
+Exemplo:
+
+Entrada: n = 3
+
+Saída: 5
+
+Explicação:
+Os primeiros números de Catalan são:
+
+C_0=1 (base)
+C_1=1
+C_2=C_0
+cdotC_1+C_1
+cdotC_0=1
+cdot1+1
+cdot1=2
+C_3=C_0
+cdotC_2+C_1
+cdotC_1+C_2
+cdotC_0=1
+cdot2+1
+cdot1+2
+cdot1=2+1+2=5
+
+A fórmula de recorrência para os números de Catalan é:
+```
+C_0 = 1
+C_n+1 =
+sum_i=0 ** n C_iC_n−i
+```
+
+-----------
+
+### 27. Multiplicação em Cadeia de Matrizes (Matrix Chain Multiplication)
+
+Este padrão é usado para resolver problemas que envolvem determinar a ordem ótima de operações para minimizar o custo de realizar uma série de operações.
+
+É baseado no popular problema de otimização: Multiplicação em Cadeia de Matrizes.
+
+É útil quando:
+
+<ul>
+<li>Você está lidando com uma sequência de elementos que podem ser combinados em pares.</li>
+<li>O custo de combinar elementos depende da ordem de combinação.</li>
+<li>Você precisa encontrar a maneira ótima de combinar os elementos.</li>
+<li>O problema envolve minimizar (ou maximizar) o custo das operações de combinação dos elementos.</li>
+</ul>
+
+**Contexto de uso:** Além da multiplicação de matrizes, este padrão pode ser aplicado a problemas de otimização de operações que seguem uma estrutura similar, como a junção ótima de tabelas em um banco de dados, ou a combinação de algoritmos em uma cadeia de processamento para minimizar o tempo de execução.
+
+Problema Exemplo:
+Dada uma sequência de matrizes, encontre a ordem de multiplicação que minimiza o número total de multiplicações escalares.
+
+Exemplo:
+
+Entrada: dims = [10, 30, 5, 60] (representando matrizes: A(10x30), B(30x5), C(5x60))
+
+Saída: 4500
+
+Explicação:
+Temos três matrizes: A_10times30, B_30times5, C_5times60.
+As possíveis ordens de multiplicação são:
+
+(AB)C:
+(A_10times30
+timesB_30times5) resulta em uma matriz AB_10times5. Custo: 10
+times30
+times5=1500.
+(AB_10times5
+timesC_5times60) resulta em (AB)C_10times60. Custo: 10
+times5
+times60=3000.
+Custo total: 1500+3000=4500.
+A(BC):
+(B_30times5
+timesC_5times60) resulta em uma matriz BC_30times60. Custo: 30
+times5
+times60=9000.
+(A_10times30
+timesBC_30times60) resulta em A(BC)_10times60. Custo: 10
+times30
+times60=18000.
+Custo total: 9000+18000=27000.
+O custo mínimo é 4500.
+
+Este problema é resolvido com Programação Dinâmica usando uma tabela dp[i][j] para armazenar o custo mínimo de multiplicar as matrizes da i-ésima à j-ésima.
