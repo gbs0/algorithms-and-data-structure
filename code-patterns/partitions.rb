@@ -48,4 +48,4 @@ puts "Partições de 'aab': #{partition("aab").inspect}" # Saída: [["a", "a", "
 puts "Partições de 'a': #{partition("a").inspect}"     # Saída: [["a"]]
 puts "Partições de 'racecar': #{partition("racecar").inspect}"
 # Saída: [["r", "a", "c", "e", "c", "a", "r"], ["r", "acecar"], ["racecar"]] (e mais outras combinações)
-puts "Partições de 'efe': #{partition("efe").inspect}" # Saída: [["e", "f", "e"], ["efe"]]
+puts "Partições de 'efe': #{partition("efe").inspect}" # Saída: [["e", "f", "e"], ["efe"]]  
