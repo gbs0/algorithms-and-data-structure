@@ -1064,3 +1064,131 @@ a está em ambas.
 c está em ambas.
 e está em ambas.
 
+-------
+
+### 21. Maior Subsequência Crescente (Longest Increasing Subsequence - LIS)
+O padrão Maior Subsequência Crescente (LIS) é usado para resolver problemas que envolvem encontrar a subsequência mais longa de elementos em uma sequência onde os elementos estão em ordem crescente. Os elementos não precisam ser contíguos na sequência original.
+
+**Contexto de uso:** Encontrar tendências em dados financeiros, otimizar armazenamento de itens onde a ordem é importante, ou em algoritmos de classificação e pesquisa que dependem da ordem dos elementos.
+
+Problema Exemplo:
+Dada uma array de números inteiros nums, retorne o comprimento da maior subsequência estritamente crescente.
+
+Exemplo:
+
+Entrada: nums = [10, 9, 2, 5, 3, 7, 101, 18]
+
+Saída: 4
+
+Explicação:
+A maior subsequência crescente é [2, 3, 7, 101] (ou [2, 5, 7, 101], ou [2, 3, 7, 18]), que tem comprimento 4.
+
+Este problema pode ser resolvido com Programação Dinâmica, onde dp[i] armazena o comprimento da maior subsequência crescente que termina no índice i.
+
+-----------
+
+### 22. Subsequência Palindrômica (Palindromic Subsequence)
+O padrão Subsequência Palindrômica é usado ao resolver problemas que envolvem encontrar uma subsequência dentro de uma sequência (geralmente uma string) que se lê da mesma forma para frente e para trás. Os elementos não precisam ser contíguos na sequência original.
+
+Contexto de uso: Similar ao LCS, este padrão é encontrado em bioinformática (para analisar sequências genéticas com simetria), em algoritmos de compressão de dados, e em problemas de processamento de texto.
+
+Problema Exemplo:
+Dada uma string s, encontre o comprimento da maior subsequência palindrômica.
+
+Exemplo:
+
+Entrada: s = "bbbab"
+
+Saída: 4
+
+Explicação:
+A maior subsequência palindrômica é "bbbb", que tem comprimento 4. Outras subsequências palindrômicas são "bbb", "bab", etc.
+
+Este problema pode ser resolvido por Programação Dinâmica. Uma abordagem comum é que o comprimento da maior subsequência palindrômica de uma string s é igual ao comprimento da maior subsequência comum entre s e sua versão invertida s_reversed.
+
+-----------
+
+### 23.Distância de Edição (Edit Distance)
+O padrão Distância de Edição é usado para resolver problemas que envolvem transformar uma sequência (geralmente uma string) em outra sequência usando um número mínimo de operações.
+
+As operações permitidas tipicamente incluem:
+
+• `Inserção:` Adicionar um caractere.
+
+• `Exclusão:` Remover um caractere.
+
+• `Substituição:` Mudar um caractere por outro.
+
+**Contexto de uso:** Este padrão é fundamental em algoritmos de correção ortográfica (autocorreção), comparação de strings para detecção de similaridade (fuzzy matching), bioinformática (alinhamento de sequências), e em sistemas de recomendação baseados em texto.
+
+Problema Exemplo:
+Dadas duas strings word1 e word2, retorne o número mínimo de operações necessárias para transformar word1 em word2.
+
+Exemplo:
+
+Entrada: word1 = "horse", word2 = "ros"
+
+Saída: 3
+
+Explicação:
+
+horse -> rorse (Substituição de 'h' por 'r')
+rorse -> rose (Exclusão de 'r')
+rose -> ros (Exclusão de 'e')
+
+-------
+
+### 24.Soma de Subconjuntos (Subset Sum)
+O padrão Soma de Subconjuntos é usado para resolver problemas onde você precisa determinar se um subconjunto de elementos de um dado conjunto pode somar um valor alvo específico.
+
+Contexto de uso: Este padrão tem aplicações em criptografia, otimização de estoque (para preencher um pedido exatamente), problemas de corte e embalagem, e até mesmo em algoritmos de geração de números pseudoaleatórios.
+
+Problema Exemplo:
+Dado um conjunto de números inteiros nums e um valor alvo target, determine se existe um subconjunto de nums cuja soma seja igual a target.
+
+Exemplo:
+
+Entrada: nums = [3, 34, 4, 12, 5, 2], target = 9
+
+Saída: true
+
+Explicação:
+O subconjunto [4, 5] soma 9.
+
+Este problema é um caso especial do problema da mochila 0/1, onde o "valor" de cada item é igual ao seu "peso". Uma tabela DP dp[i][j] pode ser usada para indicar se uma soma j pode ser alcançada usando os primeiros i elementos.
+
+-----------
+
+### 25. Partição de String (String Partition)
+O padrão Partição de String é usado para resolver problemas que envolvem a partição de uma string em substrings menores que satisfaçam certas condições.
+
+É útil quando:
+
+<ul>
+<li>Você está trabalhando com problemas envolvendo strings ou sequências.</li>
+<li>O problema requer a divisão da string em substrings ou subsequências.</li>
+<li>Você precisa otimizar alguma propriedade sobre essas partições (por exemplo, minimizar custo, maximizar valor).</li>
+<li>A solução para o problema geral pode ser construída a partir de soluções para subproblemas em substrings menores.</li>
+<li>Há uma necessidade de considerar diferentes maneiras de particionar a string.</li>
+</ul>
+
+**Contexto de uso:** Este padrão é aplicável em problemas de segmentação de strings, como quebra de palavras para formatação de texto, identificação de expressões regulares complexas, ou em bioinformática para analisar fragmentos de sequências. Muitas vezes, envolve recursão com memoização ou DP.
+
+Problema Exemplo:
+Dada uma string s, particione s de forma que cada substring da partição seja um palíndromo. Retorne todas as possíveis partições de palíndromo.
+
+Exemplo:
+
+Entrada: s = "aab"
+
+Saída: [["a","a","b"], ["aa","b"]]
+
+Explicação:
+As possíveis partições onde cada parte é um palíndromo são:
+
+1. "a", "a", "b"
+2. "aa", "b"
+
+-----------
+
+### 26.
